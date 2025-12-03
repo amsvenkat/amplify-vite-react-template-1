@@ -3,6 +3,8 @@ import type { Schema } from "../amplify/data/resource";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
 import { generateClient } from "aws-amplify/data";
+import { deleteUser } from 'aws-amplify/auth';
+
 
 const client = generateClient<Schema>();
 
@@ -23,7 +25,6 @@ function App() {
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id })
   }
-  import { deleteUser } from 'aws-amplify/auth';
 
   async function handleDeleteUser() {
     try {
